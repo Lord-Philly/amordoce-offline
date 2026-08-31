@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="106.311" height="61.515" viewBox="0 0 106.311 61.515">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_9824" data-name="Rectangle 9824" width="106.311" height="61.515" transform="translate(782 1058.748)" fill="#fff" opacity="0.5"/>
+    </clipPath>
+    <filter id="Rectangle_9823" x="-39.933" y="-18.503" width="167.933" height="167.933" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="btn_hide" data-name="btn hide" transform="translate(-782 -1058.748)" clip-path="url(#clip-path)">
+    <g id="Groupe_17883" data-name="Groupe 17883" transform="translate(751.067 1046.245)">
+      <g transform="matrix(1, 0, 0, 1, 30.93, 12.5)" filter="url(#Rectangle_9823)">
+        <rect id="Rectangle_9823-2" data-name="Rectangle 9823" width="63.35" height="148.687" rx="31.675" transform="translate(74.2 -12.5) rotate(45)" fill="#fff"/>
+      </g>
+      <g id="Groupe_17882" data-name="Groupe 17882" transform="translate(91.445 31.084)">
+        <circle id="Ellipse_163" data-name="Ellipse 163" cx="13.915" cy="13.915" r="13.915" transform="translate(0 0)" fill="none" stroke="#3e2918" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <path id="Tracé_14962" data-name="Tracé 14962" d="M13.2,6.529,7.956,11.751,13.2,16.972" transform="translate(2.884 2.164)" fill="none" stroke="#3e2918" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+    </g>
+  </g>
+</svg>

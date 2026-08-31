@@ -1,0 +1,26 @@
+{
+  "ChiNoMimi": {
+    "name": "ChiNoMimi",
+    "role": "tutorial-guide",
+    "relationshipStart": 0,
+    "sprites": {
+      "base": "assets/img/characters/ChiNoMimi/chinomimi-2.webp",
+      "emotions": {
+        "happy": "assets/img/characters/ChiNoMimi/chinomimi-1.webp",
+        "default": "assets/img/characters/ChiNoMimi/chinomimi-2.webp",
+        "angry": "assets/img/characters/ChiNoMimi/chinomimi-3.webp"
+      }
+    }
+  },
+  "Agatha": {
+    "name": "Agatha",
+    "role": "aunt",
+    "relationshipStart": 0,
+    "sprites": {
+      "base": "assets/img/characters/Agatha/agatha-1.webp",
+      "emotions": {
+        "default": "assets/img/characters/Agatha/agatha-1.webp"
+      }
+    }
+  }
+}

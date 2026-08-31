@@ -1,0 +1,10 @@
+{
+  "game": {
+    "title": "Amor Doce — Offline",
+    "version": "0.1.0",
+    "schema": 1
+  },
+  "episodes": [
+    { "id": "ep-00", "number": 0, "name": "Introdução", "file": "episodes/ep-00.json", "image": "assets/img/0-e6d8c5ea1833715c~1526634037.jpg" }
+  ]
+}

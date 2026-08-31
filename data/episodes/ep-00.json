@@ -1,0 +1,112 @@
+{
+  "episode": {
+    "id": "ep-00",
+    "number": 0,
+    "name": "Introdução",
+    "description": "Tutorial do jogo e apresentação das funções",
+    "place": "corredor"
+  },
+  "locations": {
+    "corredor": {
+      "id": "corredor",
+      "name": "Corredor principal",
+      "image": "assets/img/corredor-principal.png"
+    },
+    "gremio": {
+      "id": "gremio",
+      "name": "Grêmio",
+      "image": "assets/img/classroom-background.png"
+    }
+  },
+  "actors": {
+    "ChiNoMimi": {
+      "emotions": {
+        "happy": "chinomimi-1.webp",
+        "default": "chinomimi-2.webp",
+        "angry": "chinomimi-3.webp"
+      }
+    },
+    "Agatha": {
+      "emotions": {
+        "default": "agatha-1.webp"
+      }
+    }
+  },
+  "storyline": [
+    { "id": "0", "type": "bubble", "character": "ChiNoMimi", "emotion": "happy", "text": "Olá! Bem-vindo(a) ao jogo Amor Doce! Eu sou ChiNoMimi e estou aqui para te explicar as regras do jogo. Pronto(a)?", "x": 8.28, "y": 25.91, "maxWidth": 28.66, "place": "corredor" },
+    { "id": "1", "type": "dialog", "responses": [
+      { "text": "Pronta!", "goto": "2" },
+      { "text": "(Pular o tutorial)", "goto": "47" }
+    ] },
+    { "id": "2", "type": "bubble", "character": "ChiNoMimi", "emotion": "default", "text": "Vamos lá! Primeiro eu vou te explicar o que são os PAs ou \"Pontos de ação\". Eles permitem que você avance no jogo ao clicar nas caixas de diálogo. Eles só serão descontados a partir do próximo episódio!", "x": 9.47, "y": 26.1, "maxWidth": 25.85, "place": "corredor" },
+    { "id": "3", "type": "dialog", "responses": [ { "text": "(Próximo)", "goto": "4" } ] },
+    { "id": "4", "type": "bubble", "character": "ChiNoMimi", "emotion": "default", "text": "Você pode ver o seu total de PA no alto da tela. Ele diminui quando você clica em um diálogo. Você ganha 20 PA por dia, cada vez que se conecta. Se você não tiver mais nenhum PA, terá que esperar o dia seguinte ou fazer uma recarga.", "x": 8.53, "y": 25.81, "maxWidth": 29.1, "place": "corredor" },
+    { "id": "5", "type": "dialog", "responses": [ { "text": "(Próximo)", "goto": "6" } ] },
+    { "id": "6", "type": "bubble", "character": "ChiNoMimi", "emotion": "happy", "text": "Você pode também se locomover no jogo clicando nos pontos de deslocamento. Esses movimentos não custarão PA. Vamos testar isso agora mesmo: tente entrar na sala à sua direita e volte aqui. Eu estou esperando por você.", "x": 9.27, "y": 23.32, "maxWidth": 26.77, "place": "corredor" },
+    { "id": "7", "type": "dialog", "responses": [ { "text": "(Terminar a conversa)", "goto": "8" } ] },
+    { "id": "8", "type": "objective", "objectives": [
+      { "text": "Vá para a sala ao lado.", "id": "8-1" },
+      { "text": "Volte para encontrar a ChiNoMimi.", "id": "8-2" }
+    ], "place": "corredor" },
+
+    { "id": "9", "type": "move", "place": "corredor", "moves": [ { "goto": "10", "top": 40, "left": 70, "label": "Entrar no Grêmio" } ] },
+    { "id": "10", "type": "move", "place": "gremio", "moves": [ { "goto": "11", "top": 75, "left": 85, "label": "Voltar ao corredor" } ] },
+    { "id": "11", "type": "bubble", "character": "ChiNoMimi", "emotion": "happy", "text": "Ótimo, você está indo bem. Então, vamos continuar...", "x": 10, "y": 35, "maxWidth": 25, "place": "corredor", "completeObjectives": ["8-1", "8-2"] },
+    { "id": "12", "type": "dialog", "responses": [ { "text": "(Próximo)", "goto": "13" } ] },
+
+    { "id": "13", "type": "bubble", "character": "ChiNoMimi", "emotion": "happy", "text": "Além dos PA, você tem também o dinheiro: os $ (Golds). Você ganha 5$ todos os dias, na sua primeira conexão. Eles serão úteis nos episódios para comprar roupas ou objetos, por exemplo. Se precisar de mais, você pode recarregar. Você entendeu tudo?", "x": 8, "y": 20, "maxWidth": 30, "place": "corredor" },
+    { "id": "14", "type": "dialog", "responses": [
+      { "text": "Sim!", "goto": "15", "set": { "chinomimi_love": "+3" } },
+      { "text": "Não, você poderia repetir, por favor?", "goto": "2", "set": { "chinomimi_love": "-1" } }
+    ] },
+    { "id": "15", "type": "bubble", "character": "ChiNoMimi", "emotion": "happy", "text": "Ótimo, vamos em frente! Você está vendo esta barra à direita? É o Loveômetro. Quando você conversa com um dos personagens, esse medidor diminui ou aumenta. Quanto mais alto, mais o personagem gosta de você.", "x": 8, "y": 20, "maxWidth": 30, "place": "corredor" },
+    { "id": "16", "type": "dialog", "responses": [ { "text": "(Próximo)", "goto": "17" } ] },
+    { "id": "17", "type": "bubble", "character": "ChiNoMimi", "emotion": "default", "text": "Além disso, no final de um episódio, você terá acesso a um encontro com a pessoa com quem terá mais afinidades. Portanto, sempre existem finais diferentes, que dependem das suas escolhas!", "x": 8, "y": 25, "maxWidth": 30, "place": "corredor" },
+    { "id": "18", "type": "dialog", "responses": [ { "text": "(Próximo)", "goto": "19" } ] },
+    { "id": "19", "type": "bubble", "character": "ChiNoMimi", "emotion": "default", "text": "Ao aceitar um encontro, saiba que não será tão fácil assim. Você precisa escolher os trajes que agradarão o garoto em questão e, às vezes, responder as suas perguntas corretamente. Se você seguir essas etapas, o seu encontro será um sucesso!", "x": 8, "y": 20, "maxWidth": 30, "place": "corredor" },
+    { "id": "20", "type": "dialog", "responses": [ { "text": "(Próximo)", "goto": "21" } ] },
+    { "id": "21", "type": "bubble", "character": "ChiNoMimi", "emotion": "default", "text": "Eu também lhe aconselho a encontrar a sua tia em cada episódio, ela é uma mulher muito engraçada, sempre pronta para lhe dar trajes ou objetos exclusivos! Você entendeu?", "x": 8, "y": 30, "maxWidth": 30, "place": "corredor" },
+    { "id": "22", "type": "dialog", "responses": [
+      { "text": "Sim, entendi.", "goto": "23", "set": { "chinomimi_love": "+1" } },
+      { "text": "Não, explique-me novamente, por favor.", "goto": "15" }
+    ] },
+    { "id": "23", "type": "bubble", "character": "ChiNoMimi", "emotion": "default", "text": "Hum... Eu esqueci algo? Ah, claro! No decorrer dos episódios, você encontra algumas missões. Dentre elas, algumas informações que você precisa obter. Não hesite em conversar com várias pessoas!", "x": 8, "y": 25, "maxWidth": 30, "place": "corredor" },
+    { "id": "24", "type": "dialog", "responses": [ { "text": "(Próximo)", "goto": "25" } ] },
+    { "id": "25", "type": "bubble", "character": "ChiNoMimi", "emotion": "default", "text": "Nós podemos também lhe pedir para que encontre objetos. Existem três maneiras possíveis de fazer isso: adquiri-los nas lojas, pegá-los com outro personagem ou encontrá-los ao seu redor. Você tem que ficar de olho!", "x": 10, "y": 20, "maxWidth": 25, "place": "corredor" },
+    { "id": "26", "type": "dialog", "responses": [ { "text": "Anotado!", "goto": "27" } ] },
+    { "id": "27", "type": "bubble", "character": "ChiNoMimi", "emotion": "default", "text": "Ah, não pense que é fácil! Vamos tentar, o que acha? Volte para a sala à direita, encontre uma pequena escultura que eu fiz durante meu curso de artes plásticas e volte aqui.", "x": 10, "y": 30, "maxWidth": 25, "place": "corredor" },
+    { "id": "28", "type": "dialog", "responses": [ { "text": "Ok, já estou indo.", "goto": "29" } ] },
+    { "id": "29", "type": "objective", "objectives": [
+      { "text": "Encontre a escultura da ChiNoMimi.", "id": "29-1" },
+      { "text": "Volte para encontrar a ChiNoMimi.", "id": "29-2" }
+    ], "place": "corredor" },
+
+    { "id": "30", "type": "move", "place": "corredor", "moves": [ { "goto": "31", "top": 40, "left": 70, "label": "Entrar no Grêmio" } ] },
+    { "id": "31", "type": "move", "place": "gremio", "items": [
+      { "item": "1", "top": 50, "left": 20 }
+    ], "moves": [ { "goto": "32", "top": 75, "left": 85, "label": "Voltar ao corredor" } ] },
+    { "id": "32", "type": "pickup", "item": "1", "received": [ "Objeto recebido: Escultura de elefante" ], "auto": "33" },
+
+    { "id": "33", "type": "bubble", "character": "ChiNoMimi", "emotion": "angry", "text": "Você achou? Hehe, eu acho que isso não foi tão difícil. Eu vou dá-lo a você, se quiser, você pode decorar o seu quarto com ele. Uma última coisa e, depois, eu terminarei as minhas explicações.", "x": 8, "y": 25, "maxWidth": 30, "place": "corredor", "completeObjectives": ["29-1", "29-2"] },
+    { "id": "34", "type": "dialog", "responses": [ { "text": "(Próximo)", "goto": "35" } ] },
+    { "id": "35", "type": "bubble", "character": "ChiNoMimi", "emotion": "happy", "text": "Você tem a possibilidade de jogar novamente os episódios. Existem duas opções diferentes para isso.", "x": 15, "y": 35, "maxWidth": 20, "place": "corredor" },
+    { "id": "36", "type": "dialog", "responses": [ { "text": "(Próximo)", "goto": "37" } ] },
+    { "id": "37", "type": "bubble", "character": "ChiNoMimi", "emotion": "default", "text": "O replay história: você joga mais uma vez o episódio e suas escolhas são levadas em conta no cenário. Você é obrigada a jogar de novo todos os episódios que aparecem após este que você jogou, pois todas as mudanças na história são consideradas.", "x": 10, "y": 25, "maxWidth": 25, "place": "corredor" },
+    { "id": "38", "type": "dialog", "responses": [ { "text": "(Próximo)", "goto": "39" } ] },
+    { "id": "39", "type": "bubble", "character": "ChiNoMimi", "emotion": "default", "text": "Você tem também o replay livre: você pode jogar qualquer episódio livremente sem que a sua história seja alterada. É esse replay que você deve usar para desbloquear os finais diferentes ou tentar encontrar os objetos especiais, por exemplo, sem mudar a sua história original.", "x": 8, "y": 20, "maxWidth": 30, "place": "corredor" },
+    { "id": "40", "type": "dialog", "responses": [ { "text": "(Próximo)", "goto": "41" } ] },
+    { "id": "41", "type": "bubble", "character": "ChiNoMimi", "emotion": "default", "text": "Eu sei que isso pode ser um pouco complicado de entender, então não hesite em me pedir para repetir, se você precisar. Tem certeza de que entendeu tudo?", "x": 10, "y": 30, "maxWidth": 25, "place": "corredor" },
+    { "id": "42", "type": "dialog", "responses": [
+      { "text": "Eu entendi muito bem!", "goto": "43", "set": { "chinomimi_love": "+2" } },
+      { "text": "Na verdade, se você puder explicar novamente...", "goto": "35", "set": { "chinomimi_love": "-1" } }
+    ] },
+    { "id": "43", "type": "bubble", "character": "ChiNoMimi", "emotion": "happy", "text": "Ótimo, então terminamos! Se você tiver alguma dúvida ou problema, não deixe de consultar a aba AJUDA ou o guia na seção do fórum \"Guia dos episódios. SOLUÇÕES\".", "x": 10, "y": 30, "maxWidth": 25, "place": "corredor" },
+    { "id": "44", "type": "dialog", "responses": [ { "text": "(Próximo)", "goto": "45" } ] },
+    { "id": "45", "type": "bubble", "character": "Agatha", "emotion": "default", "text": "Oh minha querida, sou eu, a sua tia! Antes que você parta à procura do amor, aqui está uma coisinha para ajudá-la a avançar em sua aventura no Amor Doce!", "x": 8, "y": 23, "maxWidth": 25, "place": "corredor" },
+    { "id": "46", "type": "dialog", "responses": [
+      { "text": "Obrigada, tia! Até mais! (Ela me deu 100 pontos de ação).", "goto": "47", "set": { "pa": "+100", "golds": "+5" } }
+    ] },
+    { "id": "47", "type": "dialog-end", "responses": [ { "text": "FIM DO EPISÓDIO.", "goto": "48" } ] },
+    { "id": "48", "type": "end-episode", "nextEpisode": "ep-01" }
+  ]
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1200, shrink-to-fit=no">
+  <title>Amor Doce — Offline</title>
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="season-s1">
+
+  <!-- ===================== HUD / HEADER ===================== -->
+  <header id="hud">
+    <div class="hud-left">
+      <span class="hud-name"></span>
+    </div>
+    <div class="hud-right">
+      <span class="currency">
+        <span class="hud-pa">-</span>
+        <img src="assets/img/ap.png" alt="PA">
+      </span>
+      <span class="currency">
+        <span class="hud-golds">-</span>
+        <img src="assets/img/golds.png" alt="Golds">
+      </span>
+    </div>
+  </header>
+
+  <!-- ===================== MENU DE NAVEGAÇÃO ===================== -->
+  <nav id="main-menu">
+    <button data-view="home">Início</button>
+    <button data-view="episodes">Meus episódios</button>
+    <button data-view="profile">Perfil</button>
+    <button data-view="save">Saves</button>
+  </nav>
+
+  <main id="app">
+    <!-- VIEW: HOME -->
+    <section id="view-home" class="view">
+      <h1 class="game-title">Amor Doce</h1>
+      <p class="game-sub">versão offline pessoal</p>
+
+      <div id="home-new">
+        <h2>Criar personagem</h2>
+        <label>Nome</label>
+        <input type="text" id="new-player-name" placeholder="Digite seu nome">
+        <button id="btn-create" class="btn-primary">Criar e começar</button>
+      </div>
+
+      <div id="home-continue" style="display:none">
+        <h2>Bem-vinda de volta, <span id="home-return-name"></span>!</h2>
+        <button id="btn-continue-episode" class="btn-primary">Continuar</button>
+        <button id="btn-new-game" class="btn-ghost">Novo jogo</button>
+      </div>
+    </section>
+
+    <!-- VIEW: GAME (story scene) -->
+    <section id="view-game" class="view" style="display:none">
+      <div id="story-controls">
+        <button id="btn-back-to-episodes">← Voltar</button>
+        <span id="current-episode-label"></span>
+        <button id="btn-auto-skip">+ PA (dica)</button>
+      </div>
+
+      <div id="moment-scene">
+        <img id="scene-background" class="scene-background" src="" alt="">
+        <div id="scene-moves" class="scene-moves"></div>
+        <div id="scene-items" class="scene-items"></div>
+        <div class="lom">
+          <div class="lom-inner">
+            <div class="lom-gauge"></div>
+          </div>
+          <div class="lom-heart"><span class="lom-heart-value">0%</span></div>
+        </div>
+        <div id="dialog-bubble-0" class="dialog-bubble hidden">
+          <div class="bubble-npc-name"></div>
+          <div class="bubble-text"></div>
+        </div>
+        <div id="scene-choices" class="scene-choices">
+          <ol></ol>
+        </div>
+        <canvas id="static-npc-canvas" width="978" height="660" class="static-npc"></canvas>
+      </div>
+
+      <div id="objectives-panel">
+        <h3>Objetivos</h3>
+        <ul class="objectives-side-overlay"></ul>
+      </div>
+
+      <div id="objectives-top" class="objectives-top"></div>
+
+      <div id="notification-panel" class="notification-panel hidden"></div>
+    </section>
+
+    <!-- VIEW: EPISODES -->
+    <section id="view-episodes" class="view" style="display:none">
+      <h2>Meus episódios</h2>
+      <ul id="episode-list"></ul>
+    </section>
+
+    <!-- VIEW: PROFILE -->
+    <section id="view-profile" class="view" style="display:none">
+      <h2>Perfil</h2>
+      <p id="profile-name"></p>
+      <canvas id="avatar-profile-canvas" width="250" height="250" data-type="canva-face"></canvas>
+      <label>Nome</label>
+      <input type="text" id="profile-name-input">
+      <button id="btn-save-profile" class="btn-primary">Salvar</button>
+    </section>
+
+    <!-- VIEW: SAVES -->
+    <section id="view-save" class="view" style="display:none">
+      <h2>Saves</h2>
+      <button id="btn-export" class="btn-primary">Exportar save (JSON)</button>
+      <button id="btn-import" class="btn-ghost">Importar save</button>
+      <input type="file" id="save-file-input" accept=".json" style="display:none">
+      <button id="btn-reset" class="btn-danger">Apagar tudo</button>
+      <p class="hint">Dica: exporte e faça backup do arquivo para continuar em outro dispositivo.</p>
+    </section>
+  </main>
+
+  <footer>
+    <span>AMOR DOCE | Recreação offline para uso pessoal (direitos reservados a Beemoov)</span>
+  </footer>
+
+  <script type="module" src="engine/main.js"></script>
+</body>
+</html>

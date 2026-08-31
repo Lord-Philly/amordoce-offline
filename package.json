@@ -1,0 +1,7 @@
+{
+  "name": "amordoce-offline",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Versão offline pessoal do Amor Doce (prova de conceito — direitos reservados a Beemoov)"
+}
